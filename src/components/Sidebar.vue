@@ -19,7 +19,7 @@
         <div class="flex flex-col items-center w-full h-[calc(100%-5rem)] dark:text-white text-black p-4 gap-1 relative">
             <router-link to="/"
                 class="flex justify-start items-center drop-shadow-md hover:bg-slate-300 dark:hover:bg-[#242627] w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110"
-                :class="this.$route.name == 'dashboard' ? 'dark:bg-active bg-slate-300' : '' ">
+                :class="this.$route.name == 'dashboard' ? 'dark:bg-active bg-slate-300' : ''">
                 <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/228BE6/external-chat-chat-flatart-icons-outline-flatarticons-3.png"
                     class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Chats</span>
@@ -40,7 +40,7 @@
             </button>
             <router-link to="/manage"
                 class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]"
-                :class="this.$route.name == 'manage' ? 'dark:bg-active bg-slate-300' : '' ">
+                :class="this.$route.name == 'manage' ? 'dark:bg-active bg-slate-300' : ''">
                 <img src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/24/986684/external-credit-card-online-shop-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto-2.png"
                     class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Manage Subscription</span>
@@ -57,7 +57,7 @@
                 <span class="pl-4 drop-shadow-md">Settings</span>
             </button>
 
-            <hr class="dark:bg-slate-700 bg-slate-300 w-full h-[1px] my-2 border-0">
+            <hr class="dark:bg-slate-700 bg-slate-300 w-full h-px my-2 border-0">
 
             <button class="flex justify-start items-center w-full h-12 rounded-lg pl-4" @click="chat_list = !chat_list">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -154,53 +154,53 @@
 
 <script>
 export default {
-  data() {
-    return {
-      chat_list: true,
-      dark: false
-    }
-  },
-  methods: {
-    darkModeSwitch() {
-      // if set via local storage previously
-      if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-          console.log(localStorage);
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-          this.dark = true;
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-          this.dark = false;
+    data() {
+        return {
+            chat_list: true,
+            dark: true
         }
+    },
+    methods: {
+        darkModeSwitch() {
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                    // console.log(localStorage.getItem('color-theme'));
+                    this.dark = true;
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                    this.dark = false;
+                }
 
-        // if NOT set via local storage previously
-      } else {
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-          this.dark = false;
-        } else {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-          this.dark = true;
+                // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                    this.dark = false;
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                    this.dark = true;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 </script>
 
 <style>
 .glow-animation:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
 }
 
 .glow-animation-white:hover {
-  color: #919191;
-  text-shadow: 0 0 10px #919191, 0 0 20px #919191, 0 0 40px #919191;
+    color: #919191;
+    text-shadow: 0 0 10px #919191, 0 0 20px #919191, 0 0 40px #919191;
 }
 </style>
