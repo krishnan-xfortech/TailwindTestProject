@@ -1,0 +1,329 @@
+<template>
+    <div class="flex justify-center items-center w-full h-screen bg-[#151718]">
+        <div class="flex flex-col w-[20%] h-full">
+            <div class="flex justify-between items-end w-full h-20 text-white pt-12 p-4">
+                <div class="flex justify-start w-full">
+                    <img src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/60/6C7375/external-brain-anatomy-vitaliy-gorbachev-blue-vitaly-gorbachev-1.png"
+                        class="w-8 h-8" />
+                    <span class="font-semibold text-2xl px-5">Brainwave</span>
+                </div>
+                <img src="https://img.icons8.com/fluency-systems-filled/48/FFFFFF/left-navigation-toolbar.png"
+                    class="w-5 h-5 mt-2" />
+            </div>
+            <div class="flex flex-col items-center w-full h-[calc(100%-5rem)] text-white p-4 gap-1">
+                <button class="flex justify-start items-center bg-[#242627] w-full h-12 rounded-lg pl-4">
+                    <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/228BE6/external-chat-chat-flatart-icons-outline-flatarticons-3.png"
+                        class="w-6 h-6" />
+                    <span class="pl-4">Chats</span>
+                </button>
+                <div class="flex justify-start items-center w-full h-12 rounded-lg pl-4 cursor-pointer">
+                    <img src="https://img.icons8.com/ios-glyphs/30/40C057/search--v1.png" class="w-6 h-6" />
+                    <span class="pl-4">Search</span>
+                    <div
+                        class="flex justify-center items-center w-10 h-6 rounded-lg bg-slate-800 text-sm gap-1 text-slate-400 p-1 ml-28">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-command w-3 h-3"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3.5 2A1.5 1.5 0 0 1 5 3.5V5H3.5a1.5 1.5 0 1 1 0-3zM6 5V3.5A2.5 2.5 0 1 0 3.5 6H5v4H3.5A2.5 2.5 0 1 0 6 12.5V11h4v1.5a2.5 2.5 0 1 0 2.5-2.5H11V6h1.5A2.5 2.5 0 1 0 10 3.5V5H6zm4 1v4H6V6h4zm1-1V3.5A1.5 1.5 0 1 1 12.5 5H11zm0 6h1.5a1.5 1.5 0 1 1-1.5 1.5V11zm-6 0v1.5A1.5 1.5 0 1 1 3.5 11H5z" />
+                        </svg>
+                        F
+                    </div>
+                </div>
+                <div class="flex justify-start items-center w-full h-12 rounded-lg pl-4 cursor-pointer">
+                    <img src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/24/986684/external-credit-card-online-shop-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto-2.png"
+                        class="w-6 h-6" />
+                    <span class="pl-4">Manage Subscription</span>
+                </div>
+                <div class="flex justify-start items-center w-full h-12 rounded-lg pl-4 cursor-pointer">
+                    <img src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/AF4B20/external-scan-basic-user-interface-anggara-basic-outline-anggara-putra.png"
+                        class="w-6 h-6" />
+                    <span class="pl-4">Updates & FAQ</span>
+                </div>
+                <div class="flex justify-start items-center w-full h-12 rounded-lg pl-4 cursor-pointer">
+                    <img src="https://img.icons8.com/sf-regular/24/7950F2/settings.png" class="w-6 h-6" />
+                    <span class="pl-4">Settings</span>
+                </div>
+
+                <hr class="bg-slate-600 w-[270px] h-[1px] my-4 -pl-10 border-0">
+
+                <div class="flex justify-start items-center w-full h-12 rounded-lg pl-4 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6 text-slate-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                    <span class="pl-4 text-slate-500">Chat list</span>
+                </div>
+
+                <div class="flex justify-between items-center w-full h-12 rounded-lg px-4 cursor-pointer">
+                    <div class="flex justify-start w-full">
+                        <div class="box w-5 h-5 rounded-md bg-slate-600"></div>
+                        <span class="pl-4">Welcome</span>
+                    </div>
+                    <div class="flex justify-center items-center w-7 h-6 rounded-lg bg-slate-600 text-slate-400 p-1">48
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-[#242627] w-full h-12 rounded-lg px-4 cursor-pointer">
+                    <div class="flex justify-start w-full">
+                        <div class="box w-5 h-5 rounded-md bg-purple-600"></div>
+                        <span class="pl-4">UI8 Production</span>
+                    </div>
+                    <div class="flex justify-center items-center w-7 h-6 rounded-lg bg-slate-600 text-slate-400 p-1">16
+                    </div>
+                </div>
+                <div class="flex justify-between items-center w-full h-12 rounded-lg px-4 cursor-pointer">
+                    <div class="flex justify-start w-full">
+                        <div class="box w-5 h-5 rounded-md bg-blue-400"></div>
+                        <span class="pl-4">Favorites</span>
+                    </div>
+                    <div class="flex justify-center items-center w-7 h-6 rounded-lg bg-slate-600 text-slate-400 p-1">8</div>
+                </div>
+                <div class="flex justify-between items-center w-full h-12 rounded-lg px-4 cursor-pointer">
+                    <div class="flex justify-start w-full">
+                        <div class="box w-5 h-5 rounded-md bg-orange-600"></div>
+                        <span class="pl-4">Archived</span>
+                    </div>
+                    <div class="flex justify-center items-center w-8 h-6 rounded-lg bg-slate-600 text-slate-400 p-1">128
+                    </div>
+                </div>
+
+                <div class="flex justify-start items-center w-full h-12 rounded-lg pl-4 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 text-slate-500">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="pl-4 text-slate-500">New list</span>
+                </div>
+
+                <div class="flex justify-center items-center w-full h-12 p-1 mt-4 rounded-lg cursor-pointer bg-[#242627]">
+                    <div class="w-1/2 h-full flex justify-center items-center bg-slate-900 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-6 h-6 text-white">
+                            <path
+                                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                        </svg>
+                        <span>Light</span>
+                    </div>
+                    <div class="w-1/2 h-full flex justify-center items-center rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                        </svg>
+                        <span>Dark</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex w-[80%] h-full bg-[#151718] p-6">
+            <div class="flex w-full h-full bg-[#2f3334] rounded-xl">
+                <div class="flex flex-col w-[65%]">
+                    <div class="flex justify-between items-center w-full h-14 px-10 shadow-2xl">
+                        <span class="font-semibold text-xl text-white">Cute Superman</span>
+                        <div class="flex gap-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6 text-slate-500">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6 text-slate-500">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6 text-slate-500">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <hr class="bg-slate-600 w-full h-[1px] border-0">
+
+                    <div class="flex flex-col w-full h-[calc(100%-5rem)] p-6">
+                        <div class="justify-center items-center w-full h-[85%]  rounded-3xl bg-black p-6 relative">
+                            <div class="bg-center w-full h-[27rem] rounded-3xl"
+                                style="background-image: url('/assets/cute-superman.png')">
+
+                            </div>
+                            <div
+                                class="flex w-full h-[calc(100%-27rem)] justify-start items-start gap-3 py-2 mb-3 text-xs text-white">
+                                <button
+                                    class="w-20 h-6 flex justify-between items-center bg-white rounded-md px-3 font-semibold pb-1 text-black">Export
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" class="w-4 h-4 text-black">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                                    </svg>
+                                </button>
+                                <button
+                                    class="w-32 h-6 flex justify-between items-center bg-[#343839] rounded-md px-3 font-semibold pb-1">Create
+                                    variation
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </button>
+                                <button
+                                    class="w-20 h-6 flex justify-between items-center bg-[#343839] rounded-md px-3 font-semibold pb-1">Adjust
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                                    </svg>
+                                </button>
+                                <button
+                                    class="w-24 h-6 flex justify-between items-center bg-[#343839] rounded-md px-3 font-semibold pb-1">Enhance
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                    </svg>
+                                </button>
+
+                            </div>
+
+                            <div class="flex justify-between items-center absolute -mt-5 w-[96%] h-[60px]">
+                                <div class="w-15 h-15 p-2 bg-blue-500 rounded-lg flex items-center justify-center">
+                                    <img class="w-15 h-15"
+                                        src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/30/000000/external-brain-anatomy-vitaliy-gorbachev-blue-vitaly-gorbachev-1.png" />
+                                </div>
+                                <div class="flex items-center gap-2 mt-10">
+                                    <span class="text-sm text-slate-400">Just now</span>
+                                    <button class="w-10 h-6 bg-black rounded-lg text-white text-sm">Copy</button>
+                                    <button class="w-36 h-6 bg-black rounded-lg text-white text-sm">Regenerate
+                                        response</button>
+                                    <div class="flex justify-center items-center w-9 h-6 bg-black rounded-lg text-white">
+                                        <img class="w-4 h-4" src="https://img.icons8.com/emoji/48/000000/star-struck.png" />
+                                        <img class="w-4 h-4"
+                                            src="https://img.icons8.com/emoji/48/000000/frowning-face.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex w-full h-[15%]">
+                            <div
+                                class="flex justify-between items-center w-full h-14 border-2 border-slate-600 rounded-lg mt-16 mb-1 px-4">
+                                <div class="flex gap-2 w-full">
+                                    <img src="https://img.icons8.com/sf-regular-filled/48/A6A6A6/add.png"
+                                        class="w-10 h-10 cursor-pointer" />
+                                    <input type="text" placeholder="Type '/' for commands"
+                                        class="w-full caret-white focus:outline-none bg-transparent placeholder:text-sm placeholder:font-semibold placeholder:text-slate-500">
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-soundwave w-8 h-8 text-slate-500 cursor-pointer" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col w-[35%] h-full relative ">
+                    <div class="absolute w-[0.5px] h-full bg-slate-600 border-0 "></div>
+                    <div class="flex h-14 gap-10 justify-end items-center px-10 border-b-slate-600 shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 text-slate-500">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                        </svg>
+                        <div class="relative">
+                            <img class="w-9 h-9 rounded-full"
+                                src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
+                            <span
+                                class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                        </div>
+                        <button class="bg-[#FEFEFE] h-8 w-20 px-2 rounded-lg font-semibold">Share</button>
+                    </div>
+
+                    <hr class="bg-slate-600 w-full h-[1px] border-0">
+
+                    <div class="flex flex-col w-full h-[calc(100%-5rem)] bg-[#2f3334] p-2 gap-1">
+                        <div class="flex w-full h-[5%] justify-between py-2 my-2 px-12">
+                            <div class="flex gap-2">
+                                <span class="text-slate-600 font-semibold">Chat history</span>
+                                <span
+                                    class="flex justify-center items-center text-slate-600 w-14 h-6 rounded-lg text-sm font-semibold pb-1 bg-black">28/100</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-slate-500">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                            </svg>
+                        </div>
+
+                        <div class="flex w-[80%] h-[33%] min-w-[80%] min-h-[33%] rounded-lg bg-slate-600 mx-10 p-2">
+                            <div class="flex flex-col">
+                                <div class="w-6 h-6 border border-slate-500 rounded-lg"></div>
+                            </div>
+                            <div class="flex flex-col items-start w-full h-full gap-2 px-4">
+                                <span class="w-full h-5 font-semibold text-white">Cute Superman</span>
+                                <span class="w-full h-full text-xs text-slate-400">Write code (HTML, CSS and JS) for a
+                                    simple...</span>
+                                <img src="/assets/cute-1.png" class="w-40 h-32 rounded-md" />
+                                <div class="flex w-full h-full justify-between items-center">
+                                    <img class="w-7 h-7 rounded-full"
+                                        src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
+                                    <span class="text-sm text-slate-400">Just now</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex w-[80%] h-[33%] min-w-[80%] min-h-[33%] rounded-lg mx-10 p-2">
+                            <div class="flex flex-col">
+                                <div class="w-6 h-6 border border-slate-500 rounded-lg"></div>
+                            </div>
+                            <div class="flex flex-col items-start w-full h-full gap-2 px-4">
+                                <span class="w-full h-5 font-semibold text-white">Cartoon Captian America</span>
+                                <span class="w-full h-full 2xl:text-xs xl:text-[10px] lg:text-[8px] text-slate-400">Write code (HTML, CSS and JS) for a
+                                    simple...</span>
+                                <img src="/assets/captian-1.png" class="w-40 h-32 rounded-md" />
+                                <div class="flex w-full h-full justify-between items-center">
+                                    <img class="w-7 h-7 rounded-full"
+                                        src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
+                                    <span class="text-sm text-slate-400">Just now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex w-[80%] h-[11%] min-w-[80%] min-h-[11%] rounded-lg mx-10 p-2">
+                            <div class="flex flex-col">
+                                <div class="w-6 h-6 border border-slate-500 rounded-lg"></div>
+                            </div>
+                            <div class="flex flex-col items-start w-full h-full gap-2 px-4">
+                                <span class="w-36 h-5 font-semibold text-white">Photo retouch</span>
+                                <span class="w-full h-full text-xs text-slate-400">Photography shoot of anime
+                                    Travelers...</span>
+                                <div class="flex w-full justify-between items-center">
+                                    <div class="flex mb-5 -space-x-4">
+                                        <img class="w-10 h-10 rounded-full"
+                                            src="https://img.icons8.com/color/48/000000/user-female-circle--v1.png" />
+                                        <img class="w-10 h-10 rounded-full"
+                                            src="https://img.icons8.com/color/48/000000/user-female-circle--v1.png" />
+                                        <img class="w-10 h-10 rounded-full"
+                                            src="https://img.icons8.com/color/48/000000/user-female-circle--v1.png" />
+                                    </div>
+                                    <span class="text-sm text-slate-400">Just now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex w-[85%] h-[13%] rounded-lg mx-10 p-4 mt-4">
+                            <button
+                                class="bg-blue-600 w-full h-full flex justify-center items-center text-white text-sm rounded-lg mt-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus w-6 h-6"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                                New chat</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
