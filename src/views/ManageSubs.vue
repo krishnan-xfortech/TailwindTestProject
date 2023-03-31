@@ -10,16 +10,16 @@
                 <span>can unlock long-term value and drive economic growth.</span>
             </div>
             <div class="flex justify-center items-center gap-5 mt-1 font-medium">
-                <span>Monthly</span>
+                <span :class="!toggle_1 ? '' : 'text-slate-500' ">Monthly</span>
 
                 <label class="relative inline-flex items-center cursor-pointer">
-                    <input type="checkbox" value="" class="sr-only peer">
+                    <input type="checkbox" v-model="toggle_1" class="sr-only peer">
                     <div
                         class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-0 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                     </div>
                 </label>
 
-                <span class="dark:text-slate-300">Yearly</span>
+                <span :class="toggle_1 ? '' : 'text-slate-500' ">Yearly</span>
             </div>
         </div>
         <div class="flex w-full h-[45rem] gap-10 p-6 rounded-lg">
@@ -30,7 +30,7 @@
                 <span class="drop-shadow-lg text-5xl font-bold my-3">$29</span>
                 <span class="dark:text-slate-400">$19 USD per month, paid annually</span>
 
-                <button class="flex justify-center items-center gap-2 text-blue-600 hover:text-blue-700">Go to
+                <button class="flex justify-center items-center gap-2 text-blue-600 hover:text-blue-800 font-medium">Go to
                     annual plan
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right w-4 h-4"
                         viewBox="0 0 16 16">
@@ -39,7 +39,7 @@
                     </svg>
                 </button>
                 <button
-                    class="flex justify-center items-center w-[90%] h-10 my-6 bg-slate-500 hover:bg-blue-500 dark:hover:bg-blue-500 dark:bg-slate-600 dark:text-white rounded-lg">Get
+                    class="flex justify-center items-center w-[90%] h-10 my-6 bg-black hover:bg-blue-500 dark:hover:bg-blue-500 dark:bg-slate-600 text-white rounded-lg">Get
                     started</button>
 
                 <div class="space-y-1">
@@ -68,7 +68,7 @@
                         </svg>
                         <span class="flex items-center mt-2">Comprehensive security</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-box-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -76,7 +76,7 @@
                         </svg>
                         <span class="flex items-center mt-2 line-through">Get hundreds of feature updates</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-fire w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path
@@ -84,7 +84,7 @@
                         </svg>
                         <span class="flex items-center mt-2 line-through">Payouts to your bank account</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-clipboard2-data-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path
@@ -94,7 +94,7 @@
                         </svg>
                         <span class="flex items-center mt-2 line-through">Financial reconciliation and reporting</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-chat-dots-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path
@@ -102,7 +102,7 @@
                         </svg>
                         <span class="flex items-center mt-2 line-through">24×7 phone, chat, and email support</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-box-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -116,13 +116,13 @@
             <div
                 class="flex flex-col w-1/3 h-full justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 drop-shadow-lg transition ease-in-out hover:scale-110 hover:border-2 border-blue-500">
                 <span
-                    class="w-[100px] h-6 p-1 flex justify-center items-center -mt-4 pb-2 rounded-b-sm text-sm bg-slate-400 dark:bg-white dark:text-blue-700 font-medium drop-shadow-lg">Most
+                    class="w-[100px] h-6 p-1 flex justify-center items-center -mt-4 pb-2 rounded-b-sm text-sm bg-blue-200 text-blue-700 font-medium drop-shadow-lg">Most
                     popular</span>
                 <span class="text-2xl drop-shadow-lg">Premium</span>
                 <span class="text-5xl font-bold my-3 drop-shadow-lg">$199</span>
                 <span class="dark:text-slate-400">$159 USD per month, paid annually</span>
 
-                <button class="flex justify-center items-center gap-2 text-blue-600 hover:text-blue-700">Go to
+                <button class="flex justify-center items-center gap-2 text-blue-600 hover:text-blue-800 font-medium">Go to
                     annual plan
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right w-4 h-4"
                         viewBox="0 0 16 16">
@@ -131,7 +131,7 @@
                     </svg>
                 </button>
                 <button
-                    class="flex justify-center items-center w-[90%] h-10 my-6 drop-shadow-lg bg-slate-500 hover:bg-blue-500 dark:hover:bg-blue-500 dark:bg-slate-600 dark:text-white rounded-lg">Get
+                    class="flex justify-center items-center w-[90%] h-10 my-6 drop-shadow-lg bg-black hover:bg-blue-500 dark:hover:bg-blue-500 dark:bg-slate-600 text-white rounded-lg">Get
                     started</button>
 
                 <div class="space-y-1 w-full h-auto mb-5">
@@ -176,7 +176,7 @@
                         </svg>
                         <span class="flex items-center mt-2">Payouts to your bank account</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-clipboard2-data-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path
@@ -186,7 +186,7 @@
                         </svg>
                         <span class="flex items-center mt-2 line-through">Financial reconciliation and reporting</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-chat-dots-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path
@@ -194,7 +194,7 @@
                         </svg>
                         <span class="flex items-center mt-2 line-through">24×7 phone, chat, and email support</span>
                     </div>
-                    <div class="flex items-center w-full h-10 px-5 dark:text-slate-400">
+                    <div class="flex items-center w-full h-10 px-5 text-slate-600">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                             class="bi bi-box-fill w-5 h-5 float-right mr-4 mt-2" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -211,7 +211,7 @@
                 <span class="drop-shadow-lg text-5xl font-bold my-3">$599</span>
                 <span class="dark:text-slate-400">$499 USD per month, paid annually</span>
 
-                <button class="flex justify-center items-center gap-2 text-blue-600 hover:text-blue-700">Go to
+                <button class="flex justify-center items-center gap-2 text-blue-600 hover:text-blue-800 font-medium">Go to
                     annual plan
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right w-4 h-4"
                         viewBox="0 0 16 16">
@@ -220,7 +220,7 @@
                     </svg>
                 </button>
                 <button
-                    class="flex justify-center items-center w-[90%] h-10 my-6 bg-slate-500 hover:bg-blue-500 dark:hover:bg-blue-500 dark:bg-slate-600 dark:text-white rounded-lg">Get
+                    class="flex justify-center items-center w-[90%] h-10 my-6 bg-black hover:bg-blue-500 dark:hover:bg-blue-500 dark:bg-slate-600 text-white rounded-lg">Get
                     started</button>
 
                 <div class="space-y-1">
@@ -297,3 +297,13 @@
         </div>
     </div>
 </template>
+
+<script>
+export default{
+    data(){
+        return {
+            toggle_1:false
+        }
+    }
+}
+</script>
