@@ -4,10 +4,15 @@ module.exports = {
   content: ["./src/**/*.{html,js,vue}", "./index.html"],
   theme: {
     extend: {
-      colors:{
-        'active' : '#242627'
+      colors: {
+        'active': '#242627'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }

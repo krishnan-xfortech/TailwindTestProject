@@ -1,5 +1,5 @@
 <template>
-    <div class="flex w-[80%] h-full dark:bg-[#151718] p-6">
+    <div class="flex w-full h-full dark:bg-[#151718] p-6">
         <div class="flex w-full h-full dark:bg-[#2f3334] bg-slate-100 rounded-xl drop-shadow-lg shadow-lg">
             <div class="flex flex-col w-[65%]">
                 <div class="flex justify-between items-center w-full h-14 px-10 shadow-lg">
@@ -134,7 +134,7 @@
                         </span>
                     </button>
                     <button
-                        class="dark:bg-[#FEFEFE] bg-slate-300 h-8 w-20 px-2 rounded-lg font-semibold transition ease-in-out hover:scale-110">Share
+                        class="dark:bg-[#FEFEFE] text-black bg-slate-300 h-8 w-20 px-2 rounded-lg font-semibold transition ease-in-out hover:scale-110">Share
                     </button>
                 </div>
 

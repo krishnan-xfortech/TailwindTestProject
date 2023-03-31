@@ -2,7 +2,9 @@
   <div class="flex justify-center items-center w-full h-screen dark:bg-[#151718] bg-white">
 
     <Sidebar />
-    <router-view />
+    <div class="w-[80%] h-full dark:bg-[#151718] dark:text-white">
+      <router-view />
+    </div>
 
   </div>
 </template>
