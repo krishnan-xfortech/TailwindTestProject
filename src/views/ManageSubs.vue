@@ -1,7 +1,7 @@
 <template>
     <div
         class="w-full h-full p-6 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 scrollbar-rounded-full">
-        <div class="flex flex-col w-full h-52 gap-5">
+        <div class="flex flex-col w-full h-52 gap-5 drop-shadow-lg">
             <div class="flex justify-center items-center m-2">
                 <span class="text-4xl font-bold">Designed for business teams like yours</span>
             </div>
@@ -25,7 +25,7 @@
         <div class="flex w-full h-[45rem] gap-10 p-6 rounded-lg">
 
             <div
-                class="flex flex-col w-1/3 h-full py-6 justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 transition ease-in-out drop-shadow-lg hover:scale-110 hover:border-2 border-blue-500">
+                class="flex flex-col w-1/3 h-full py-6 justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 transition ease-in-out drop-shadow-lg hover:scale-105 hover:border-2 border-blue-500">
                 <span class="drop-shadow-lg text-2xl">Starter</span>
                 <span class="drop-shadow-lg text-5xl font-bold my-3">$29</span>
                 <span class="dark:text-slate-400">$19 USD per month, paid annually</span>
@@ -114,7 +114,7 @@
             </div>
 
             <div
-                class="flex flex-col w-1/3 h-full justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 drop-shadow-lg transition ease-in-out hover:scale-110 hover:border-2 border-blue-500">
+                class="flex flex-col w-1/3 h-full justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 drop-shadow-lg transition ease-in-out hover:scale-105 hover:border-2 border-blue-500">
                 <span
                     class="w-[100px] h-6 p-1 flex justify-center items-center -mt-4 pb-2 rounded-b-sm text-sm bg-blue-200 text-blue-700 font-medium drop-shadow-lg">Most
                     popular</span>
@@ -206,7 +206,7 @@
             </div>
 
             <div
-                class="flex flex-col w-1/3 h-full py-6 justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 transition ease-in-out drop-shadow-lg hover:scale-110 hover:border-2 border-blue-500">
+                class="flex flex-col w-1/3 h-full py-6 justify-center items-center dark:bg-slate-800 bg-slate-300 rounded-lg gap-1 transition ease-in-out drop-shadow-lg hover:scale-105 hover:border-2 border-blue-500">
                 <span class="drop-shadow-lg text-2xl">Enterprise</span>
                 <span class="drop-shadow-lg text-5xl font-bold my-3">$599</span>
                 <span class="dark:text-slate-400">$499 USD per month, paid annually</span>

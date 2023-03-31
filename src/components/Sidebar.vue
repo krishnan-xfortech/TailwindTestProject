@@ -45,12 +45,13 @@
                     class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Manage Subscription</span>
             </router-link>
-            <button
-                class="flex justify-start items-center w-full drop-shadow-md h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]">
+            <router-link to="/faq-page"
+                class="flex justify-start items-center w-full drop-shadow-md h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]"
+                :class="this.$route.name == 'faq-page' ? 'dark:bg-active bg-slate-300' : ''">
                 <img src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/AF4B20/external-scan-basic-user-interface-anggara-basic-outline-anggara-putra.png"
                     class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Updates & FAQ</span>
-            </button>
+            </router-link>
             <button
                 class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]">
                 <img src="https://img.icons8.com/sf-regular/24/7950F2/settings.png" class="w-7 h-7" />

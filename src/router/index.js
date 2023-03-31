@@ -14,6 +14,11 @@ const router = createRouter({
             name:'manage',
             component: () => import('../views/ManageSubs.vue')
         },
+        {
+            path:'/faq-page',
+            name:'faq-page',
+            component: () => import('../views/FaqView.vue')
+        },
     ]
 })
 
