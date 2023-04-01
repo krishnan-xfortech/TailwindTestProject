@@ -52,11 +52,11 @@
                     class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Updates & FAQ</span>
             </router-link>
-            <button
+            <router-link to="/settings-page"
                 class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]">
                 <img src="https://img.icons8.com/sf-regular/24/7950F2/settings.png" class="w-7 h-7" />
                 <span class="pl-4 drop-shadow-md">Settings</span>
-            </button>
+            </router-link>
 
             <hr class="dark:bg-slate-700 bg-slate-300 w-full h-px my-2 border-0">
 

@@ -19,6 +19,11 @@ const router = createRouter({
             name:'faq-page',
             component: () => import('../views/FaqView.vue')
         },
+        {
+            path:'/settings-page',
+            name:'settings-page',
+            component: () => import('../views/SettingsView.vue')
+        },
     ]
 })
 
