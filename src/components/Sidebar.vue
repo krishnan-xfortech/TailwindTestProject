@@ -53,7 +53,8 @@
                 <span class="pl-4 drop-shadow-md">Updates & FAQ</span>
             </router-link>
             <router-link to="/settings-page"
-                class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]">
+                class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]"
+                :class="this.$route.name == 'settings-page' ? 'dark:bg-active bg-slate-300' : ''">
                 <img src="https://img.icons8.com/sf-regular/24/7950F2/settings.png" class="w-7 h-7" />
                 <span class="pl-4 drop-shadow-md">Settings</span>
             </router-link>
