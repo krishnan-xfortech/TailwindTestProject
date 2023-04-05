@@ -104,7 +104,7 @@
                                 <img src="https://img.icons8.com/sf-regular-filled/48/A6A6A6/add.png"
                                     class="w-10 h-10 cursor-pointer transition ease-in-out hover:scale-110" />
                                 <input type="text" placeholder="Type '/' for commands"
-                                    class="w-full text-slate-500 dark:caret-white focus:outline-none bg-transparent transition ease-in-out hover:fade placeholder:text-sm placeholder:font-semibold placeholder:text-slate-500">
+                                    class="w-full text-slate-500 dark:caret-white border-0 focus:ring-0 focus:outline-none bg-transparent transition ease-in-out hover:fade placeholder:text-sm placeholder:font-semibold placeholder:text-slate-500">
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-soundwave w-8 h-8 text-slate-500 cursor-pointer transition ease-in-out hover:scale-110"

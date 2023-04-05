@@ -33,7 +33,7 @@
                         <div class="w-[80%] h-full">
                             <div class="w-full h-[60%] mt-6">
                                 <input
-                                    class="block w-full h-10 file:h-full file:w-24 file:mr-3 file:text-sm file:font-medium file:rounded-l-lg file:border-0 dark:hover:file:bg-slate-500 dark:file:bg-slate-600 file:bg-black hover:file:bg-slate-800 file:text-white hover:file:cursor-pointer text-sm font-medium text-gray-900 border-l-0 border-2 border-gray-300 rounded-lg cursor-pointer bg-slate-200 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                    class="block w-full h-10 file:h-full file:w-30 file:mr-3 file:text-sm file:font-medium file:rounded-l-lg file:border-0 dark:hover:file:bg-slate-500 dark:file:bg-slate-600 file:bg-black hover:file:bg-slate-800 file:text-white hover:file:cursor-pointer text-sm font-medium text-gray-900 border-l-0 border-2 border-gray-300 rounded-lg cursor-pointer bg-slate-200 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="file_input_help" id="file_input" type="file">
                                 <p class="mt-1 text-xs text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG
                                     or GIF (MAX. 800x400px).</p>
@@ -245,7 +245,7 @@
                                 <textarea type="text"
                                     class="dark:text-white overflow-y-auto border-2 border-gray-300 dark:border-gray-500 bg-slate-200 dark:bg-slate-600 w-full h-[70%] pl-3 rounded-lg focus:outline-none"
                                     placeholder="Write your biography...">Hello, I'm Helene Engels, USA Designer, Creating things that stand out, Featured by Adobe, Figma, Webflow and others, Daily design tips & resources, Exploring Web3.
-                                                    </textarea>
+                                                                                            </textarea>
                             </div>
                         </div>
                     </div>
@@ -253,7 +253,8 @@
 
                 <div
                     class="flex justify-start items-center w-full h-16 border border-gray-200 dark:border-gray-700 rounded-b-md pl-6 gap-3">
-                    <button class="w-32 h-10 font-semibold bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Update
+                    <button @click="showModal"
+                        class="w-32 h-10 font-semibold focus:outline-none bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Update
                         user</button>
                     <button
                         class="bg-transparent border-2 font-semibold border-red-500 text-red-500 hover:text-white hover:bg-red-500 rounded-lg h-10 p-2 flex justify-center items-center gap-2">
@@ -265,14 +266,43 @@
                         Delete
                     </button>
                 </div>
-
             </div>
-
         </div>
     </div>
+
+    <Teleport to="#modals">
+
+        <div id="modalEl" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
+            <div class="relative w-96 h-96 max-w-2xl md:h-auto">
+                <div
+                    class="relative flex flex-col justify-center items-center bg-white rounded-lg shadow backdrop-blur-md bg-white/20">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mt-3">
+                        <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium dark:text-slate-200">Successful!</h3>
+                    <div class="mt-5 text-center">
+                        <p class="text-sm dark:text-slate-200">User settings updated successfully!</p>
+                    </div>
+                    <div class="items-center px-4 py-3">
+                        <button @click="hideModal()"
+                            class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-green-300">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </Teleport>
 </template>
 
 <script>
+import { Modal } from 'flowbite';
+
 export default {
     data() {
         return {
@@ -283,7 +313,11 @@ export default {
             confirm_password: '',
             toggle: false,
             country: 0,
+            modal: null
         }
+    },
+    mounted() {
+        this.modal = new Modal(document.getElementById('modalEl'));
     },
     methods: {
         accordionFunction(id) {
@@ -296,6 +330,13 @@ export default {
                 this.accordion_2 = !this.accordion_2;
             }
         },
+        showModal() {
+            this.modal.show()
+            console.log(this.modal);
+        },
+        hideModal() {
+            this.modal.hide()
+        }
     }
 }
 </script>
