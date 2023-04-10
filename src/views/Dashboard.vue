@@ -127,10 +127,38 @@
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </button>
-                    <button class="relative transition ease-in-out hover:scale-110">
-                        <img class="w-9 h-9 rounded-full"
+                    <button class="group flex relative transition ease-in-out hover:scale-110">
+                        <img class="w-9 h-9 rounded-full" @click="profile_btn = !profile_btn"
                             src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
-                        <span class="bottom-0 left-7 absolute  w-3 h-3 bg-green-400 border-2 dark:border-gray-800 rounded-full">
+                        <div v-show="profile_btn"
+                            class=" transition-opacity backdrop-blur-md bg-white/20 px-1 w-[180px] h-[240px] text-sm divide-y divide-gray-100 dark:text-white dark:divide-gray-500 z-50 rounded-lg absolute top-0 -translate-x-0 translate-y-10">
+                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                                <div>Bonnie Green</div>
+                                <div class="font-medium truncate">name@flowbite.com</div>
+                            </div>
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 rounded-3xl hover:backdrop-blur-lg font-semibold drop-shadow-lg dark:hover:text-white">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 rounded-3xl hover:backdrop-blur-lg font-semibold drop-shadow-lg dark:hover:text-white">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 rounded-3xl hover:backdrop-blur-lg font-semibold drop-shadow-lg dark:hover:text-white">Earnings</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="#" @click="showModal"
+                                    class="block px-4 py-2 rounded-3xl text-sm text-red-600 font-semibold drop-shadow-lg hover:bg-red-500 hover:text-white hover:backdrop-blur-lg">Sign
+                                    out</a>
+                            </div>
+                        </div>
+
+                        <span
+                            class="bottom-0 left-7 absolute  w-3 h-3 bg-green-400 border-2 dark:border-gray-800 rounded-full">
                         </span>
                     </button>
                     <button
@@ -159,7 +187,7 @@
 
                     <div
                         class="flex 2xl:w-[80%] 2xl:h-[33%] xl:w-[78%] xl:h-[32%] lg:w-[76%] lg:h-[30%] rounded-lg dark:bg-slate-600 bg-slate-300 mx-10 p-2
-                                                                                          transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
+                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
                         <div class="flex flex-col">
                             <div class="w-6 h-6 border-2 border-slate-500 rounded-lg relative" @click="tick = !tick">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="tick"
@@ -175,7 +203,7 @@
                             <span class="w-full h-full 2xl:text-xs xl:text-[9px] lg:text-[8px] dark:text-slate-400">Write
                                 code (HTML, CSS and JS) for a
                                 simple...</span>
-                            <img src="/assets/cute-1.png" class="w-40 h-32 rounded-lg drop-shadow-lg" />
+                            <img src="/assets/cute-1.png" class="w-40 h-32 rounded-lg" />
                             <div class="flex w-full h-full justify-between items-center">
                                 <img class="2xl:w-7 2xl:h-7 xl:w-6 xl:h-6 lg:w-5 lg:h-5 rounded-full"
                                     src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
@@ -187,7 +215,7 @@
 
                     <div
                         class="flex 2xl:w-[80%] 2xl:h-[33%] xl:w-[78%] xl:h-[32%] lg:w-[76%] lg:h-[30%] rounded-lg mx-10 p-2 
-                                                                                          transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
+                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
                         <div class="flex flex-col">
                             <div class="w-6 h-6 border-2 border-slate-500 rounded-lg"></div>
                         </div>
@@ -247,14 +275,72 @@
 
         </div>
     </div>
+
+    <Teleport to="#modals">
+        <div id="logoutModal" tabindex="-1" aria-hidden="true" data-modal-backdrop="static"
+            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-lg max-w-lg h-full md:h-auto">
+                <div class="relative p-4 text-center backdrop-blur-md bg-white/20 rounded-lg shadow sm:p-5">
+                    <button type="button" @click="hideModal"
+                        class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="deleteModal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <img src="https://img.icons8.com/material-rounded/24/FF1D1D/imac-exit.png" class="w-11 h-11 mb-3.5 mx-auto"/>
+                    <p class="mb-8 text-white">Are you sure you want to logout?</p>
+                    <div class="flex justify-center items-center space-x-8">
+                        <button data-modal-toggle="deleteModal" type="button" @click="hideModal"
+                            class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:z-10 dark:bg-gray-500 dark:text-white dark:hover:bg-gray-700">
+                            No, Cancel
+                        </button>
+                        <button type="button"
+                            class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none dark:bg-red-500 dark:hover:bg-red-600">
+                            Yes, I'm sure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Teleport>
 </template>
 
 <script>
+import { Modal } from 'flowbite';
+
 export default {
     data() {
         return {
-            tick: false
+            tick: false,
+            profile_btn: false,
+            modal: null
+        }
+    },
+    mounted() {
+        this.modal = new Modal(document.getElementById('logoutModal'));
+    },
+    methods: {
+        showModal() {
+            this.modal.show()
+        },
+        hideModal() {
+            this.modal.hide()
         }
     }
 }
 </script>
+
+<style>
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+</style>

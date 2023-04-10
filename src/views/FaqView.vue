@@ -12,7 +12,7 @@
             <div class="flex flex-col w-full h-44 justify-center items-center">
                 <div class="flex relative w-full h-full justify-center items-center ">
                     <input type="text"
-                        class="w-[64%] h-14 bg-slate-100 dark:bg-slate-700 border-2 border-blue-200 dark:border-blue-400 pl-14 focus:ring-0 focus:outline-none rounded-lg placeholder:text-slate-400 placeholder:font-normal placeholder:text-lg"
+                        class="w-[64%] h-14 bg-slate-100 dark:bg-slate-700 border-2 border-blue-300 dark:border-blue-500/50 pl-14 focus:ring-0 focus:outline-none rounded-lg placeholder:text-slate-400 placeholder:font-normal placeholder:text-lg"
                         placeholder="Type keywords to find answers">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         class="bi bi-clipboard2-data-fill absolute w-5 h-5 mr-[695px] cursor-text dark:text-slate-300 text-slate-600"

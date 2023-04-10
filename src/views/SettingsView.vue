@@ -26,9 +26,30 @@
                     aria-labelledby="accordion-color-heading-1">
                     <div class="flex w-full h-40 justify-center items-center p-5 relative">
                         <span class="absolute left-3 top-0 m-3">Upload avatar</span>
-                        <div class="w-[20%] h-full relative">
-                            <img class="absolute bottom-0 left-4 flex justify-center items-center 2xl:w-20 2xl:h-20 xl:w-6 xl:h-6 lg:w-5 lg:h-5 rounded-full"
+                        <div class="w-[20%] h-full group flex relative">
+                            <div v-show="custom_border"
+                                class="absolute flex flex-col justify-center items-center p-2 w-28 h-44 backdrop-blur-md bg-slate-400/30 dark:bg-white/30 z-10 -bottom-14 -left-28 rounded-lg">
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-sm'">rounded-sm</div>
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-md'">rounded-md</div>
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-lg'">rounded-lg</div>
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-xl'">rounded-xl</div>
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-2xl'">rounded-2xl</div>
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-3xl'">rounded-3xl</div>
+                                <div class="w-full h-10 hover:bg-slate-400"
+                                    @click="border_color = 'border-2 border-transparent rounded-full'">rounded-full</div>
+                            </div>
+                            <img @click="custom_border = !custom_border" data-tooltip-target="tooltip-jese"
+                                class="absolute bg-blue-500 bottom-0 left-4 flex justify-center items-center 2xl:w-20 2xl:h-20 xl:w-6 xl:h-6 lg:w-5 lg:h-5"
+                                :class="border_color"
                                 src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
+                            <span class="group-hover:opacity-100 transition-opacity bg-gray-500 px-1 w-full text-sm dark:text-white rounded-md absolute left-1/2 
+                                    -translate-x-10 translate-y-28 opacity-0 m-4">Click on avatar to change border</span>
                         </div>
                         <div class="w-[80%] h-full">
                             <div class="w-full h-[60%] mt-6">
@@ -245,7 +266,7 @@
                                 <textarea type="text"
                                     class="dark:text-white overflow-y-auto border-2 border-gray-300 dark:border-gray-500 bg-slate-200 dark:bg-slate-600 w-full h-[70%] pl-3 rounded-lg focus:outline-none"
                                     placeholder="Write your biography...">Hello, I'm Helene Engels, USA Designer, Creating things that stand out, Featured by Adobe, Figma, Webflow and others, Daily design tips & resources, Exploring Web3.
-                                                                                            </textarea>
+                                                                                                                                                                                                                                    </textarea>
                             </div>
                         </div>
                     </div>
@@ -256,14 +277,14 @@
                     <button @click="showModal"
                         class="w-32 h-10 font-semibold focus:outline-none bg-blue-600 hover:bg-blue-700 rounded-lg text-white">Update
                         user</button>
-                    <button
-                        class="bg-transparent border-2 font-semibold border-red-500 text-red-500 hover:text-white hover:bg-red-500 rounded-lg h-10 p-2 flex justify-center items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-trash3-fill w-4 h-4"
+                    <button @click="$refs.delete_modal_ref.showModal()"
+                        class="bg-transparent border-2 font-semibold border-red-500 text-red-500 hover:text-white hover:bg-red-500 rounded-lg h-10 p-2 flex justify-center items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-reply-fill w-5 h-5"
                             viewBox="0 0 16 16">
                             <path
-                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z" />
                         </svg>
-                        Delete
+                        Reset
                     </button>
                 </div>
             </div>
@@ -271,21 +292,20 @@
     </div>
 
     <Teleport to="#modals">
-
-        <div id="modalEl" tabindex="-1" aria-hidden="true"
+        <div id="modalEl" tabindex="-1" aria-hidden="true" data-modal-backdrop="static"
             class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
             <div class="relative w-96 h-96 max-w-2xl md:h-auto">
                 <div
-                    class="relative flex flex-col justify-center items-center bg-white rounded-lg shadow backdrop-blur-md bg-white/20">
+                    class="relative flex flex-col justify-center items-center rounded-lg shadow backdrop-blur-md bg-white/20">
                     <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mt-3">
                         <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-medium dark:text-slate-200">Successful!</h3>
+                    <h3 class="text-lg font-medium text-slate-200">Successful!</h3>
                     <div class="mt-5 text-center">
-                        <p class="text-sm dark:text-slate-200">User settings updated successfully!</p>
+                        <p class="text-sm text-slate-200">User settings updated successfully!</p>
                     </div>
                     <div class="items-center px-4 py-3">
                         <button @click="hideModal()"
@@ -296,12 +316,14 @@
                 </div>
             </div>
         </div>
-
+        
+        <ResetModal ref="delete_modal_ref" @confirm="showModal" />
     </Teleport>
 </template>
 
 <script>
 import { Modal } from 'flowbite';
+import ResetModal from '../components/ResetModal.vue';
 
 export default {
     data() {
@@ -309,34 +331,37 @@ export default {
             accordion_1: true,
             accordion_2: false,
             email_verified: 0,
-            password: '',
-            confirm_password: '',
+            password: "password",
+            confirm_password: "password",
             toggle: false,
             country: 0,
-            modal: null
-        }
+            modal: null,
+            custom_border: false,
+            border_color: ''
+        };
     },
     mounted() {
-        this.modal = new Modal(document.getElementById('modalEl'));
+        this.modal = new Modal(document.getElementById("modalEl"));
     },
     methods: {
         accordionFunction(id) {
-            if (id == 'accordion-color-heading-1') {
+            if (id == "accordion-color-heading-1") {
                 this.accordion_1 = !this.accordion_1;
                 this.accordion_2 = false;
             }
-            else if (id == 'accordion-color-heading-2') {
+            else if (id == "accordion-color-heading-2") {
                 this.accordion_1 = false;
                 this.accordion_2 = !this.accordion_2;
             }
         },
         showModal() {
-            this.modal.show()
+            this.modal.show();
             console.log(this.modal);
         },
         hideModal() {
-            this.modal.hide()
-        }
-    }
+            this.modal.hide();
+        },
+    },
+    components: { ResetModal }
 }
 </script>

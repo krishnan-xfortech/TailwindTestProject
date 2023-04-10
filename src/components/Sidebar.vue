@@ -24,8 +24,9 @@
                     class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Chats</span>
             </router-link>
-            <button
-                class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]">
+            <router-link to="/search-page"
+                class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]"
+                :class="this.$route.name == 'search-page' ? 'dark:bg-active bg-slate-300' : ''">
                 <img src="https://img.icons8.com/ios-glyphs/30/40C057/search--v1.png" class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Search</span>
                 <div
@@ -37,7 +38,7 @@
                     </svg>
                     F
                 </div>
-            </button>
+            </router-link>
             <router-link to="/manage"
                 class="flex justify-start items-center drop-shadow-md w-full h-12 rounded-lg pl-4 transition ease-in-out hover:scale-110 hover:bg-slate-300 dark:hover:bg-[#242627]"
                 :class="this.$route.name == 'manage' ? 'dark:bg-active bg-slate-300' : ''">
