@@ -26,7 +26,7 @@
             class="fixed top-0 left-0 right-0 z-50 hidden w-full h-full p-4 overflow-x-hidden overflow-y-auto backdrop-blur-md bg-black/20">
             <div class="relative w-1/2 h-full flex justify-center items-center">
                 <div
-                    class="relative flex flex-col items-center w-full h-full rounded-lg shadow backdrop-blur-lg dark:bg-blue-500/20 bg-white/50 p-5 gap-3">
+                    class="relative flex flex-col items-center w-full h-full overflow-y-auto rounded-lg shadow backdrop-blur-lg dark:bg-blue-500/20 bg-white/50 p-5 gap-3">
                     <div class="flex justify-between items-center w-full -mt-2">
                         <span class="text-slate-500 dark:text-slate-100 text-xl font-semibold drop-shadow-lg">Advanced
                             Filter</span>
@@ -178,47 +178,49 @@
                     </div>
                     <div class="flex flex-col w-full h-full gap-2 drop-shadow-lg">
                         <span class="font-medium text-gray-900 dark:text-white">Properties</span>
-                        <div v-for="(item, index) in property"
-                            class="flex justify-center w-full h-auto dark:text-slate-200 text-slate-800 gap-3 p-4 dark:bg-gray-700 bg-gray-200 rounded-lg">
-                            <div class="w-1/3">
-                                <select
-                                    class="w-full h-12 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
-                                    <option value="" disabled>Country</option>
-                                    <option value="1">United States</option>
-                                    <option value="2">Canada</option>
-                                    <option value="3">France</option>
-                                    <option value="4">Germany</option>
-                                </select>
+                        <TransitionGroup name="list" tag="div">
+                            <div v-for="(item, index) in property"
+                                class="flex justify-center items-center w-full h-16 dark:text-slate-200 text-slate-800 gap-3 mb-2 p-4 dark:bg-gray-700 bg-gray-200 rounded-lg">
+                                <div class="w-1/3">
+                                    <select
+                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
+                                        <option value="" disabled>Country</option>
+                                        <option value="1">United States</option>
+                                        <option value="2">Canada</option>
+                                        <option value="3">France</option>
+                                        <option value="4">Germany</option>
+                                    </select>
+                                </div>
+                                <div class="w-1/3">
+                                    <select
+                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
+                                        <option value="" disabled>State</option>
+                                        <option value="1">Californa</option>
+                                        <option value="2">Oregon</option>
+                                        <option value="3">New York</option>
+                                        <option value="4">Florida</option>
+                                    </select>
+                                </div>
+                                <div class="w-1/3">
+                                    <select
+                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
+                                        <option value="" disabled>City</option>
+                                        <option value="1">Sacramento</option>
+                                        <option value="2">Los Angeles</option>
+                                        <option value="3">San Francisco</option>
+                                        <option value="4">San Diego</option>
+                                    </select>
+                                </div>
+                                <button @click="removeRroperty(index)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        class="bi bi-trash-fill w-5 h-5 ml-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 transition ease-in-out hover:scale-110"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                    </svg>
+                                </button>
                             </div>
-                            <div class="w-1/3">
-                                <select
-                                    class="w-full h-12 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
-                                    <option value="" disabled>State</option>
-                                    <option value="1">Californa</option>
-                                    <option value="2">Oregon</option>
-                                    <option value="3">New York</option>
-                                    <option value="4">Florida</option>
-                                </select>
-                            </div>
-                            <div class="w-1/3">
-                                <select
-                                    class="w-full h-12 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
-                                    <option value="" disabled>City</option>
-                                    <option value="1">Sacramento</option>
-                                    <option value="2">Los Angeles</option>
-                                    <option value="3">San Francisco</option>
-                                    <option value="4">San Diego</option>
-                                </select>
-                            </div>
-                            <button @click="removeRroperty(index)">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    class="bi bi-trash-fill w-5 h-5 ml-1 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-500 transition ease-in-out hover:scale-110"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                                </svg>
-                            </button>
-                        </div>
+                        </TransitionGroup>
                         <button class="flex items-center w-32 h-10 hover:underline text-blue-600 -mt-3"
                             @click="addProperty()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x w-5 h-5 rotate-45"
@@ -230,7 +232,7 @@
                         </button>
                     </div>
 
-                    <div class="absolute bottom-0 flex items-center w-full h-20 gap-3 p-5">
+                    <div class="flex items-center w-full h-10 gap-3">
                         <button class="w-40 h-10 text-white bg-blue-600 hover:bg-blue-700 border-0 ring-0 rounded-lg">Show
                             32 Results</button>
                         <button @click="resetFn"
@@ -292,3 +294,15 @@ export default {
     }
 }
 </script>
+
+<style>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+</style>
