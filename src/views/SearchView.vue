@@ -137,48 +137,83 @@
                         <div class="flex w-full text-blue-500 gap-3 mb-1">
                             <div class="w-1/3">
                                 <button
-                                    class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white ring-0 w-full rounded-lg h-10 px-2"
+                                    class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
                                     @click="btnSelect(1)"
-                                    :class="button_selected[1] ? 'bg-blue-700 text-white' : ''">Frontend
-                                    Developer</button>
+                                    :class="button_selected[1] ? 'bg-blue-700 text-white' : ''">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[1]"
+                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    Frontend Developer</button>
                             </div>
                             <div class="w-1/3">
                                 <button
-                                    class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(2)" :class="button_selected[2] ? 'bg-blue-700 text-white' : ''">UI/UX
-                                    Designer</button>
+                                    class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
+                                    @click="btnSelect(2)"
+                                    :class="button_selected[2] ? 'bg-blue-700 text-white' : ''">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[2]"
+                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    UI/UX Designer</button>
                             </div>
                             <div class="w-1/3">
                                 <button
-                                    class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(3)" :class="button_selected[3] ? 'bg-blue-700 text-white' : ''">React
-                                    Developer</button>
+                                    class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
+                                    @click="btnSelect(3)"
+                                    :class="button_selected[3] ? 'bg-blue-700 text-white' : ''">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[3]"
+                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    React Developer</button>
                             </div>
                         </div>
                         <div class="flex w-full text-blue-500 gap-3">
                             <div class="w-1/3">
                                 <button
-                                    class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(4)" :class="button_selected[4] ? 'bg-blue-700 text-white' : ''">PHP
-                                    Developer</button>
+                                    class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
+                                    @click="btnSelect(4)" 
+                                    :class="button_selected[4] ? 'bg-blue-700 text-white' : ''">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[4]"
+                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    PHP Developer</button>
                             </div>
                             <div class="w-1/3">
                                 <button
-                                    class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white ring-0 w-full rounded-lg h-10 px-2"
+                                    class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
                                     @click="btnSelect(5)"
-                                    :class="button_selected[5] ? 'bg-blue-700 text-white' : ''">Engineer</button>
+                                    :class="button_selected[5] ? 'bg-blue-700 text-white' : ''">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[5]"
+                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    Engineer</button>
                             </div>
                             <div class="w-1/3">
                                 <button
-                                    class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white ring-0 w-full rounded-lg h-10 px-2"
+                                    class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
                                     @click="btnSelect(6)"
-                                    :class="button_selected[6] ? 'bg-blue-700 text-white' : ''">Marketing</button>
+                                    :class="button_selected[6] ? 'bg-blue-700 text-white' : ''">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[6]"
+                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    </svg>
+                                    Marketing</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col w-full h-full gap-2 drop-shadow-lg">
                         <span class="font-medium text-gray-900 dark:text-white">Properties</span>
-                        <TransitionGroup name="list" tag="div">
+                        <TransitionGroup name="list">
                             <div v-for="(item, index) in property"
                                 class="flex justify-center items-center w-full h-16 dark:text-slate-200 text-slate-800 gap-3 mb-2 p-4 dark:bg-gray-700 bg-gray-200 rounded-lg">
                                 <div class="w-1/3">
@@ -298,11 +333,12 @@ export default {
 <style>
 .list-enter-active,
 .list-leave-active {
-  transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
+
 .list-enter-from,
 .list-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
+    opacity: 0;
+    transform: translateX(30px);
 }
 </style>
