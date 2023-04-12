@@ -23,10 +23,10 @@
 
     <Teleport to="#modals">
         <div id="filterModal" tabindex="-1" aria-hidden="true" data-modal-backdrop="static"
-            class="fixed top-0 left-0 right-0 z-50 hidden w-full h-full p-4 overflow-x-hidden overflow-y-auto backdrop-blur-md bg-black/20">
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full h-full p-4 backdrop-blur-md bg-black/20">
             <div class="relative w-1/2 h-full flex justify-center items-center">
                 <div
-                    class="relative flex flex-col items-center w-full h-full overflow-y-auto rounded-lg shadow backdrop-blur-lg dark:bg-blue-500/20 bg-white/50 p-5 gap-3">
+                    class="relative flex flex-col items-center w-full h-full overflow-y-auto rounded-lg shadow backdrop-blur-md bg-white/30 p-5 gap-3">
                     <div class="flex justify-between items-center w-full -mt-2">
                         <span class="text-slate-500 dark:text-slate-100 text-xl font-semibold drop-shadow-lg">Advanced
                             Filter</span>

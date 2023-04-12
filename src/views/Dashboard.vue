@@ -1,7 +1,7 @@
 <template>
     <div class="flex w-full h-full dark:bg-[#151718] p-6">
         <div class="flex w-full h-full dark:bg-[#2f3334] bg-slate-100 rounded-xl drop-shadow-lg shadow-lg">
-            <div class="flex flex-col w-[65%]">
+            <div class="flex flex-col w-[65%] overflow-y-auto">
                 <div class="flex justify-between items-center w-full h-14 px-10 shadow-lg">
                     <span class="font-semibold text-xl dark:text-white drop-shadow-md">Cute Superman</span>
                     <div class="flex gap-10">
@@ -97,23 +97,140 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex w-full h-[15%]">
+                    <div class="flex w-full h-auto relative">
                         <div
-                            class="flex justify-between items-center w-full h-14 border-2 dark:border-slate-600 border-slate-300 rounded-lg mt-16 mb-1 px-4">
+                            class="flex justify-between items-start w-full h-28 border-2 dark:border-slate-600 border-slate-300 rounded-t-lg mt-16 mb-1 px-4 pt-1">
                             <div class="flex gap-2 w-full">
-                                <img src="https://img.icons8.com/sf-regular-filled/48/A6A6A6/add.png"
-                                    class="w-10 h-10 cursor-pointer transition ease-in-out hover:scale-110" />
-                                <input type="text" placeholder="Type '/' for commands"
-                                    class="w-full text-slate-500 dark:caret-white border-0 focus:ring-0 focus:outline-none bg-transparent transition ease-in-out hover:fade placeholder:text-sm placeholder:font-semibold placeholder:text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-emoji-smile text-slate-500 w-6 h-6 mt-2 cursor-pointer transition ease-in-out hover:scale-110"
+                                    viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path
+                                        d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                                </svg>
+                                <input type="text" placeholder="Write a comment..."
+                                    class="w-full h-28 text-slate-500 dark:caret-white border-0 focus:ring-0 focus:outline-none pb-20 bg-transparent placeholder:pb-20 placeholder:font-semibold dark:text-white placeholder:text-slate-500">
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                 class="bi bi-soundwave w-8 h-8 text-slate-500 cursor-pointer transition ease-in-out hover:scale-110"
                                 viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                     d="M8.5 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5zm-2 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zm-6 1.5A.5.5 0 0 1 5 6v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm8 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm-10 1A.5.5 0 0 1 3 7v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zm12 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
                             </svg>
                         </div>
+
+                        <div
+                            class="absolute flex justify-between items-center left-0 mb-1 -bottom-16 px-4 w-full h-16 border-2 border-t-0 dark:bg-slate-600/50 bg-slate-300 dark:border-slate-600 border-slate-300 rounded-b-lg">
+                            <button
+                                class="w-32 h-10 bg-blue-600 hover:bg-blue-700 text-white flex justify-center items-center rounded-lg">Post
+                                comment</button>
+                            <div class="flex gap-7 text-slate-500 dark:text-slate-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-paperclip w-5 h-5 cursor-pointer transition ease-in-out hover:scale-110"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-geo-alt-fill w-5 h-5 cursor-pointer transition ease-in-out hover:scale-110"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-image-fill w-5 h-5 cursor-pointer transition ease-in-out hover:scale-110"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+                                </svg>
+                            </div>
+                        </div>
                     </div>
+
+                    <div
+                        class=" flex flex-col justify-center items-center p-2 mt-20 px-4 w-full h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg">
+                        <div class="flex justify-between items-center gap-5 w-full h-10">
+                            <div class="w-1/2 h-10 flex items-center gap-2">
+                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-male--v2.png" />
+                                <span class="dark:text-white w-28">Michael Gough</span>
+                                <span class="dark:text-slate-500 w-28">Feb. 8, 2022</span>
+                            </div>
+                            <div class="w-1/2 h-10 flex justify-end items-center text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-three-dots w-6 h-6 cursor-pointer" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex w-full h-20">
+                            <span class="dark:text-slate-300 text-slate-500">
+                                Very straight-to-point article. Really worth time reading. Thank you! But tools
+                                are just the instruments for the UX designers. The knowledge of the design
+                                tools are as important as the creation of the design strategy.
+                            </span>
+                        </div>
+                        <div class="flex w-full h-6 gap-1 text-sm text-slate-500 dark:text-slate-400">
+                            <div class="flex items-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-suit-heart-fill w-5 h-5 p-[3px] mt-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                                </svg>
+                                <span>11 Likes</span>
+                            </div>
+                            <div class="flex items-center cursor-pointer gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-chat-dots-fill w-4 h-4 ml-4 p-[1px]" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center p-2 mt-2 ml-[212px] px-4 w-[70%] h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg">
+                        <div class="flex justify-between items-center gap-5 w-full h-10">
+                            <div class="w-1/2 h-10 flex items-center gap-2">
+                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-female.png" />
+                                <span class="dark:text-white w-24">Jesse Leos</span>
+                                <span class="dark:text-slate-500 w-28">Feb. 12, 2022</span>
+                            </div>
+                            <div class="w-1/2 h-10 flex justify-end items-center text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-three-dots w-6 h-6 cursor-pointer" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex w-full h-8">
+                            <span class="dark:text-slate-300 text-slate-500">
+                                Much appreciated! Glad you liked it ☺️
+                            </span>
+                        </div>
+                        <div class="flex w-full h-6 gap-1 text-sm text-slate-500 dark:text-slate-400">
+                            <div class="flex items-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-suit-heart-fill w-5 h-5 p-[3px] mt-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                                </svg>
+                                <span>3 Likes</span>
+                            </div>
+                            <div class="flex items-center cursor-pointer gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-chat-dots-fill w-4 h-4 ml-4 p-[1px]" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="flex flex-col w-[35%] h-full relative ">
@@ -129,7 +246,7 @@
                     </button>
                     <button class="group flex relative transition ease-in-out hover:scale-110">
                         <img class="w-9 h-9 rounded-full" @click="profile_btn = !profile_btn"
-                            src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
+                            src="https://img.icons8.com/3d-fluency/94/null/administrator-male.png" />
                         <div v-show="profile_btn"
                             class=" transition-opacity backdrop-blur-md bg-white/20 px-1 w-[180px] h-[240px] text-sm divide-y divide-gray-100 dark:text-white dark:divide-gray-500 z-50 rounded-lg absolute top-0 -translate-x-0 translate-y-10">
                             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
@@ -187,7 +304,7 @@
 
                     <div
                         class="flex 2xl:w-[80%] 2xl:h-[33%] xl:w-[78%] xl:h-[32%] lg:w-[76%] lg:h-[30%] rounded-lg dark:bg-slate-600 bg-slate-300 mx-10 p-2
-                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
+                                                                                                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
                         <div class="flex flex-col">
                             <div class="w-6 h-6 border-2 border-slate-500 rounded-lg relative" @click="tick = !tick">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="tick"
@@ -215,7 +332,7 @@
 
                     <div
                         class="flex 2xl:w-[80%] 2xl:h-[33%] xl:w-[78%] xl:h-[32%] lg:w-[76%] lg:h-[30%] rounded-lg mx-10 p-2 
-                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
+                                                                                                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
                         <div class="flex flex-col">
                             <div class="w-6 h-6 border-2 border-slate-500 rounded-lg"></div>
                         </div>
@@ -278,9 +395,9 @@
 
     <Teleport to="#modals">
         <div id="logoutModal" tabindex="-1" aria-hidden="true" data-modal-backdrop="static"
-            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full backdrop-blur-md bg-black/50">
             <div class="relative p-4 w-lg max-w-lg h-full md:h-auto">
-                <div class="relative p-4 text-center backdrop-blur-md bg-white/20 rounded-lg shadow sm:p-5">
+                <div class="relative p-4 text-center backdrop-blur-md bg-white/30 rounded-lg shadow sm:p-5">
                     <button type="button" @click="hideModal"
                         class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                         data-modal-toggle="deleteModal">
@@ -292,7 +409,8 @@
                         </svg>
                         <span class="sr-only">Close modal</span>
                     </button>
-                    <img src="https://img.icons8.com/material-rounded/24/FF1D1D/imac-exit.png" class="w-11 h-11 mb-3.5 mx-auto"/>
+                    <img src="https://img.icons8.com/material-rounded/24/FF1D1D/imac-exit.png"
+                        class="w-11 h-11 mb-3.5 mx-auto" />
                     <p class="mb-8 text-white">Are you sure you want to logout?</p>
                     <div class="flex justify-center items-center space-x-8">
                         <button data-modal-toggle="deleteModal" type="button" @click="hideModal"
@@ -327,10 +445,11 @@ export default {
     methods: {
         showModal() {
             this.modal.show()
+            this.profile_btn = false;
         },
         hideModal() {
             this.modal.hide()
-        }
+        },
     }
 }
 </script>

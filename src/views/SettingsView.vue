@@ -28,27 +28,27 @@
                         <span class="absolute left-3 top-0 m-3">Upload avatar</span>
                         <div class="w-[20%] h-full group flex relative">
                             <div v-show="custom_border"
-                                class="absolute flex flex-col justify-center items-center p-2 w-28 h-44 backdrop-blur-md bg-slate-400/30 dark:bg-white/30 z-10 -bottom-14 -left-28 rounded-lg">
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-sm'">rounded-sm</div>
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-md'">rounded-md</div>
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-lg'">rounded-lg</div>
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-xl'">rounded-xl</div>
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-2xl'">rounded-2xl</div>
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-3xl'">rounded-3xl</div>
-                                <div class="w-full h-10 hover:bg-slate-400"
-                                    @click="border_color = 'border-2 border-transparent rounded-full'">rounded-full</div>
+                                class="absolute flex flex-col justify-start items-center p-2 w-28 h-44 backdrop-blur-md bg-slate-400/30 dark:bg-white/30 z-10 -bottom-14 -left-28 rounded-lg">
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-sm'">rounded-sm</button>
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-md'">rounded-md</button>
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-lg'">rounded-lg</button>
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-xl'">rounded-xl</button>
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-2xl'">rounded-2xl</button>
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-3xl'">rounded-3xl</button>
+                                <button class="w-full h-10 hover:bg-slate-400 rounded-lg"
+                                    @click="border_color = 'rounded-full'">rounded-full</button>
                             </div>
                             <img @click="custom_border = !custom_border" data-tooltip-target="tooltip-jese"
-                                class="absolute bg-blue-500 bottom-0 left-4 flex justify-center items-center 2xl:w-20 2xl:h-20 xl:w-6 xl:h-6 lg:w-5 lg:h-5"
+                                class="absolute bg-blue-500 bottom-0 left-4 flex justify-center items-center border-2 border-transparent 2xl:w-20 2xl:h-20 xl:w-6 xl:h-6 lg:w-5 lg:h-5"
                                 :class="border_color"
                                 src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Avatar-avatars-others-inmotus-design-16.png" />
-                            <span class="group-hover:opacity-100 transition-opacity bg-gray-500 px-1 w-full text-sm dark:text-white rounded-md absolute left-1/2 
+                            <span class="group-hover:opacity-100 transition-opacity bg-gray-500 px-1 w-full text-sm text-white rounded-md absolute left-1/2 
                                     -translate-x-10 translate-y-28 opacity-0 m-4">Click on avatar to change border</span>
                         </div>
                         <div class="w-[80%] h-full">
