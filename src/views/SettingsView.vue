@@ -296,7 +296,7 @@
             class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
             <div class="relative w-96 h-96 max-w-2xl md:h-auto">
                 <div
-                    class="relative flex flex-col justify-center items-center rounded-lg shadow backdrop-blur-md bg-white/20">
+                    class="relative flex flex-col justify-center items-center rounded-lg shadow backdrop-blur-md bg-black/40">
                     <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mt-3">
                         <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">

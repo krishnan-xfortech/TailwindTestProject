@@ -52,4 +52,17 @@ textarea {
 /* ::-webkit-scrollbar-thumb:hover {
   background: red;
 } */
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 2. declare enter from and leave to state */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
 </style>

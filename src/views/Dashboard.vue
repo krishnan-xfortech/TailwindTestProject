@@ -108,8 +108,9 @@
                                     <path
                                         d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
                                 </svg>
-                                <input type="text" placeholder="Write a comment..."
-                                    class="w-full h-28 text-slate-500 dark:caret-white border-0 focus:ring-0 focus:outline-none pb-20 bg-transparent placeholder:pb-20 placeholder:font-semibold dark:text-white placeholder:text-slate-500">
+                                <textarea rows="4"
+                                    class="block p-2.5 w-full text-sm dark:caret-white bg-transparent border-0 focus:ring-0 focus:outline-none placeholder:font-semibold dark:text-slate-300 text-slate-700/90 placeholder:text-slate-500"
+                                    placeholder="Leave a comment..."></textarea>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                 class="bi bi-soundwave w-8 h-8 text-slate-500 cursor-pointer transition ease-in-out hover:scale-110"
@@ -131,29 +132,37 @@
                                     <path
                                         d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    class="bi bi-geo-alt-fill w-5 h-5 cursor-pointer transition ease-in-out hover:scale-110"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                    class="bi bi-image-fill w-5 h-5 cursor-pointer transition ease-in-out hover:scale-110"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
-                                </svg>
+                                <button @click="locationFn" class="transition ease-in-out hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        class="bi bi-geo-alt-fill w-5 h-5" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                    </svg>
+                                </button>
+
+
+                                <p v-if="locationData.error">Error: {{ locationData.error }}</p>
+
+
+                                <button @click="$refs.file_upload_ref.showModal"
+                                    class="transition ease-in-out hover:scale-110">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        class="bi bi-image-fill w-5 h-5" viewBox="0 0 16 16">
+                                        <path
+                                            d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <div
-                        class=" flex flex-col justify-center items-center p-2 mt-20 px-4 w-full h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg">
+                        class=" flex flex-col justify-center drop-shadow-md items-center p-2 mt-20 px-4 w-full h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg gap-1">
                         <div class="flex justify-between items-center gap-5 w-full h-10">
                             <div class="w-1/2 h-10 flex items-center gap-2">
-                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-male--v2.png" />
-                                <span class="dark:text-white w-28">Michael Gough</span>
-                                <span class="dark:text-slate-500 w-28">Feb. 8, 2022</span>
+                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-female.png" />
+                                <span class="dark:text-white w-24">Jesse Leos</span>
+                                <span class="dark:text-slate-400 text-slate-500 w-24">Feb. 8, 2022</span>
                             </div>
                             <div class="w-1/2 h-10 flex justify-end items-center text-slate-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -163,8 +172,8 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="flex w-full h-20">
-                            <span class="dark:text-slate-300 text-slate-500">
+                        <div class="flex w-full h-auto">
+                            <span class="dark:text-slate-300 text-slate-700/90">
                                 Very straight-to-point article. Really worth time reading. Thank you! But tools
                                 are just the instruments for the UX designers. The knowledge of the design
                                 tools are as important as the creation of the design strategy.
@@ -177,7 +186,55 @@
                                     <path
                                         d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
                                 </svg>
-                                <span>11 Likes</span>
+                                <span class="cursor-pointer">11 Likes</span>
+                            </div>
+                            <div class="flex items-center cursor-pointer gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-chat-dots-fill w-4 h-4 ml-4 p-[1px]" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-2 w-full h-5 cursor-pointer" @click="reply = !reply">
+                        <div class="w-12 h-[1px] mr-5 dark:bg-slate-300 bg-slate-400"></div>
+                        <span v-if="!reply" class="dark:text-slate-300 text-slate-500">View replies (1)</span>
+                        <span v-else class="dark:text-slate-300 text-slate-500">Hide Replies</span>
+                    </div>
+
+                    <div v-show="reply"
+                        class="flex flex-col items-center drop-shadow-md p-2 my-2 ml-[212px] px-4 w-[70%] h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg gap-1">
+                        <div class="flex justify-between items-center gap-5 w-full h-10">
+                            <div class="w-full h-10 flex items-center gap-2">
+                                <img class="w-7 h-7"
+                                    src="https://img.icons8.com/3d-fluency/94/null/administrator-male.png" />
+                                <span class="dark:text-white w-28">Bonnie Green</span>
+                                <span class="dark:text-slate-400 text-slate-500 w-28">Feb. 12, 2022</span>
+                            </div>
+                            <div class="w-1/2 h-10 flex justify-end items-center text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-three-dots w-6 h-6 cursor-pointer" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex w-full h-auto">
+                            <span class="dark:text-slate-300 text-slate-700/90">
+                                Much appreciated! Glad you liked it 😊
+                            </span>
+                        </div>
+                        <div class="flex w-full h-6 gap-1 text-sm text-slate-500 dark:text-slate-400">
+                            <div class="flex items-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-suit-heart-fill w-5 h-5 p-[3px] mt-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                                </svg>
+                                <span class="cursor-pointer">3 Likes</span>
                             </div>
                             <div class="flex items-center cursor-pointer gap-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -191,12 +248,12 @@
                     </div>
 
                     <div
-                        class="flex flex-col items-center p-2 mt-2 ml-[212px] px-4 w-[70%] h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg">
+                        class=" flex flex-col justify-center items-center p-2 my-2 px-4 w-full h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg  gap-1">
                         <div class="flex justify-between items-center gap-5 w-full h-10">
                             <div class="w-1/2 h-10 flex items-center gap-2">
-                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-female.png" />
-                                <span class="dark:text-white w-24">Jesse Leos</span>
-                                <span class="dark:text-slate-500 w-28">Feb. 12, 2022</span>
+                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-male--v1.png" />
+                                <span class="dark:text-white w-28">Michael Gough</span>
+                                <span class="dark:text-slate-400 text-slate-500 w-28">Mar. 12, 2022</span>
                             </div>
                             <div class="w-1/2 h-10 flex justify-end items-center text-slate-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -206,9 +263,10 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="flex w-full h-8">
-                            <span class="dark:text-slate-300 text-slate-500">
-                                Much appreciated! Glad you liked it ☺️
+                        <div class="flex w-full h-auto">
+                            <span class="dark:text-slate-300 text-slate-700/90">
+                                The article covers the essentials, challenges, myths and stages the UX designer should
+                                consider while creating the design strategy.
                             </span>
                         </div>
                         <div class="flex w-full h-6 gap-1 text-sm text-slate-500 dark:text-slate-400">
@@ -218,7 +276,49 @@
                                     <path
                                         d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
                                 </svg>
-                                <span>3 Likes</span>
+                                <span class="cursor-pointer">24 Likes</span>
+                            </div>
+                            <div class="flex items-center cursor-pointer gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-chat-dots-fill w-4 h-4 ml-4 p-[1px]" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class=" flex flex-col justify-center items-center p-2 my-2 px-4 w-full h-auto border-0 dark:bg-slate-600/50 bg-slate-300 rounded-lg  gap-1">
+                        <div class="flex justify-between items-center gap-5 w-full h-10">
+                            <div class="w-1/2 h-10 flex items-center gap-2">
+                                <img class="w-7 h-7" src="https://img.icons8.com/3d-fluency/94/null/person-male--v2.png" />
+                                <span class="dark:text-white w-28">John Wick</span>
+                                <span class="dark:text-slate-400 text-slate-500 w-28">Apr. 5, 2022</span>
+                            </div>
+                            <div class="w-1/2 h-10 flex justify-end items-center text-slate-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-three-dots w-6 h-6 cursor-pointer" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex w-full h-auto">
+                            <span class="dark:text-slate-300 text-slate-700/90">
+                                The article covers the essentials, challenges, myths and stages the UX designer should
+                                consider while creating the design strategy.
+                            </span>
+                        </div>
+                        <div class="flex w-full h-6 gap-1 text-sm text-slate-500 dark:text-slate-400">
+                            <div class="flex items-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-suit-heart-fill w-5 h-5 p-[3px] mt-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+                                </svg>
+                                <span class="cursor-pointer">1M Likes</span>
                             </div>
                             <div class="flex items-center cursor-pointer gap-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -238,17 +338,16 @@
                 <div class="flex h-14 gap-10 justify-end items-center px-10 shadow-lg">
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor"
-                            class="w-6 h-6 dark:text-slate-500 transition ease-in-out hover:scale-110">
+                            stroke="currentColor" class="w-6 h-6 dark:text-slate-500">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </button>
-                    <button class="group flex relative transition ease-in-out hover:scale-110">
+                    <button class="group flex relative">
                         <img class="w-9 h-9 rounded-full" @click="profile_btn = !profile_btn"
                             src="https://img.icons8.com/3d-fluency/94/null/administrator-male.png" />
                         <div v-show="profile_btn"
-                            class=" transition-opacity backdrop-blur-md bg-white/20 px-1 w-[180px] h-[240px] text-sm divide-y divide-gray-100 dark:text-white dark:divide-gray-500 z-50 rounded-lg absolute top-0 -translate-x-0 translate-y-10">
+                            class=" transition-opacity backdrop-blur-md bg-white/20 px-1 w-[180px] h-[240px] text-sm divide-y dark:text-white dark:divide-gray-500 z-50 rounded-lg absolute top-0 -translate-x-0 translate-y-10">
                             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                                 <div>Bonnie Green</div>
                                 <div class="font-medium truncate">name@flowbite.com</div>
@@ -256,20 +355,20 @@
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 rounded-3xl hover:backdrop-blur-lg font-semibold drop-shadow-lg dark:hover:text-white">Dashboard</a>
+                                        class="block px-4 py-2 rounded-3xl font-semibold drop-shadow-lg dark:hover:bg-blue-200/30 hover:bg-blue-200">Dashboard</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 rounded-3xl hover:backdrop-blur-lg font-semibold drop-shadow-lg dark:hover:text-white">Settings</a>
+                                        class="block px-4 py-2 rounded-3xl font-semibold drop-shadow-lg dark:hover:bg-blue-200/30 hover:bg-blue-200">Settings</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 rounded-3xl hover:backdrop-blur-lg font-semibold drop-shadow-lg dark:hover:text-white">Earnings</a>
+                                        class="block px-4 py-2 rounded-3xl font-semibold drop-shadow-lg dark:hover:bg-blue-200/30 hover:bg-blue-200">Earnings</a>
                                 </li>
                             </ul>
                             <div class="py-1">
                                 <a href="#" @click="showModal"
-                                    class="block px-4 py-2 rounded-3xl text-sm text-red-600 font-semibold drop-shadow-lg hover:bg-red-500 hover:text-white hover:backdrop-blur-lg">Sign
+                                    class="block px-4 py-2 rounded-3xl text-sm text-red-600 font-semibold drop-shadow-lg hover:bg-red-500 hover:text-white">Sign
                                     out</a>
                             </div>
                         </div>
@@ -278,8 +377,7 @@
                             class="bottom-0 left-7 absolute  w-3 h-3 bg-green-400 border-2 dark:border-gray-800 rounded-full">
                         </span>
                     </button>
-                    <button
-                        class="dark:bg-[#FEFEFE] text-black bg-slate-300 h-8 w-20 px-2 rounded-lg font-semibold transition ease-in-out hover:scale-110">Share
+                    <button class="dark:bg-[#FEFEFE] text-black bg-slate-300 h-8 w-20 px-2 rounded-lg font-semibold">Share
                     </button>
                 </div>
 
@@ -304,7 +402,7 @@
 
                     <div
                         class="flex 2xl:w-[80%] 2xl:h-[33%] xl:w-[78%] xl:h-[32%] lg:w-[76%] lg:h-[30%] rounded-lg dark:bg-slate-600 bg-slate-300 mx-10 p-2
-                                                                                                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
+                                                                                                                                                                                                                                          transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
                         <div class="flex flex-col">
                             <div class="w-6 h-6 border-2 border-slate-500 rounded-lg relative" @click="tick = !tick">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="tick"
@@ -332,7 +430,7 @@
 
                     <div
                         class="flex 2xl:w-[80%] 2xl:h-[33%] xl:w-[78%] xl:h-[32%] lg:w-[76%] lg:h-[30%] rounded-lg mx-10 p-2 
-                                                                                                                                                                                      transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
+                                                                                                                                                                                                                                          transition ease-in-out hover:scale-95 dark:hover:bg-slate-600 hover:bg-slate-300">
                         <div class="flex flex-col">
                             <div class="w-6 h-6 border-2 border-slate-500 rounded-lg"></div>
                         </div>
@@ -399,8 +497,7 @@
             <div class="relative p-4 w-lg max-w-lg h-full md:h-auto">
                 <div class="relative p-4 text-center backdrop-blur-md bg-white/30 rounded-lg shadow sm:p-5">
                     <button type="button" @click="hideModal"
-                        class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-toggle="deleteModal">
+                        class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -413,7 +510,7 @@
                         class="w-11 h-11 mb-3.5 mx-auto" />
                     <p class="mb-8 text-white">Are you sure you want to logout?</p>
                     <div class="flex justify-center items-center space-x-8">
-                        <button data-modal-toggle="deleteModal" type="button" @click="hideModal"
+                        <button type="button" @click="hideModal"
                             class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:outline-none hover:text-gray-900 focus:z-10 dark:bg-gray-500 dark:text-white dark:hover:bg-gray-700">
                             No, Cancel
                         </button>
@@ -425,18 +522,30 @@
                 </div>
             </div>
         </div>
+
+        <FileUploadModal ref="file_upload_ref" />
     </Teleport>
 </template>
 
 <script>
+import { reactive } from 'vue';
 import { Modal } from 'flowbite';
+import FileUploadModal from '../components/FileUploadModal.vue';
+const locationData = reactive({
+    latitude: null,
+    longitude: null,
+    error: null
+})
 
 export default {
     data() {
         return {
             tick: false,
+            reply: false,
             profile_btn: false,
-            modal: null
+            modal: null,
+            locationData: '',
+            address: ''
         }
     },
     mounted() {
@@ -450,6 +559,27 @@ export default {
         hideModal() {
             this.modal.hide()
         },
+        locationFn() {
+            navigator.geolocation.getCurrentPosition(position => {
+                locationData.latitude = position.coords.latitude;
+                locationData.longitude = position.coords.longitude;
+            }, error => {
+                locationData.error = error.message;
+            });
+            console.log(locationData);
+            // var {data} = this.axios.get(
+            //     "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + locationData.latitude +
+            //     "," + locationData.longitude + "&key=AIzaSyDs-n58MEuFOk5CuukeRcDfo8WMIfHnAF8"
+            // );
+            // if (data.error_message) {
+            //     console.log(data.error_message)
+            // } else {
+            //     this.address = data.results[0].formatted_address;
+            // }
+        }
+    },
+    components: {
+        FileUploadModal
     }
 }
 </script>

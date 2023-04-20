@@ -23,10 +23,10 @@
 
     <Teleport to="#modals">
         <div id="filterModal" tabindex="-1" aria-hidden="true" data-modal-backdrop="static"
-            class="fixed top-0 left-0 right-0 z-50 hidden w-full h-full p-4 backdrop-blur-md bg-black/20">
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full h-full p-4 backdrop-blur-md bg-black/10">
             <div class="relative w-1/2 h-full flex justify-center items-center">
                 <div
-                    class="relative flex flex-col items-center w-full h-full overflow-y-auto rounded-lg shadow backdrop-blur-md bg-white/30 p-5 gap-3">
+                    class="relative flex flex-col items-center w-full h-full overflow-y-auto rounded-lg shadow backdrop-blur-md dark:bg-white/10 bg-white/30 p-5 gap-3">
                     <div class="flex justify-between items-center w-full -mt-2">
                         <span class="text-slate-500 dark:text-slate-100 text-xl font-semibold drop-shadow-lg">Advanced
                             Filter</span>
@@ -45,25 +45,25 @@
                             <label for="minmax-range" class="block mb-2 font-medium text-gray-900 dark:text-white">Min
                                 Age</label>
                             <input id="minmax-range" type="range" min="18" max="45" v-model="min_range"
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-600">
                         </div>
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium text-gray-900 dark:text-white">Max
                                 Age</label>
                             <input id="minmax-range" type="range" min="18" max="45" v-model="max_range"
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-600">
                         </div>
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium text-gray-900 dark:text-white">Min
                                 experience</label>
                             <input id="minmax-range" type="range" min="0" max="10" v-model="min_exp"
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-600">
                         </div>
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium text-gray-900 dark:text-white">Max
                                 experience</label>
                             <input id="minmax-range" type="range" min="0" max="10" v-model="max_exp"
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-600">
                         </div>
                     </div>
 
@@ -71,61 +71,61 @@
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium">From</label>
                             <input id="minmax-range" type="number" v-model="min_range"
-                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-700">
+                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-600">
                         </div>
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium">To</label>
                             <input id="minmax-range" type="number" v-model="max_range"
-                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-700">
+                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-600">
                         </div>
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium">From</label>
                             <input id="minmax-range" type="number" v-model="min_exp"
-                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-700">
+                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-600">
                         </div>
                         <div class="w-1/4">
                             <label for="minmax-range" class="block mb-2 font-medium">To</label>
                             <input id="minmax-range" type="number" v-model="max_exp"
-                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-700">
+                                class="w-full h-12 bg-gray-200 rounded-lg border dark:border-gray-600 border-gray-100 focus:border-gray-100 focus:ring-0 dark:focus:border-gray-600 dark:bg-gray-600">
                         </div>
                     </div>
 
                     <div class="flex flex-col w-full gap-2">
                         <h3 class="font-medium text-gray-900 dark:text-white">Account type</h3>
                         <ul
-                            class="items-center w-full text-sm font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                            <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r dark:border-gray-600">
+                            class="items-center w-full text-sm font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-lg sm:flex dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                            <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r dark:border-gray-500">
                                 <div class="flex items-center pl-3">
                                     <input id="horizontal-list-radio-license" type="radio" value="1" v-model="account_type"
                                         name="list-radio"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-700 dark:bg-gray-600">
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-600 dark:bg-gray-600">
                                     <label for="horizontal-list-radio-license"
                                         class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">All</label>
                                 </div>
                             </li>
-                            <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r dark:border-gray-600">
+                            <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r dark:border-gray-500">
                                 <div class="flex items-center pl-3">
                                     <input id="horizontal-list-radio-id" type="radio" value="2" v-model="account_type"
                                         name="list-radio"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-700 dark:bg-gray-600">
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-600 dark:bg-gray-600">
                                     <label for="horizontal-list-radio-id"
                                         class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Administrator</label>
                                 </div>
                             </li>
-                            <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r dark:border-gray-600">
+                            <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r dark:border-gray-500">
                                 <div class="flex items-center pl-3">
                                     <input id="horizontal-list-radio-millitary" type="radio" value="3"
                                         v-model="account_type" name="list-radio"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-700 dark:bg-gray-600">
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-600 dark:bg-gray-600">
                                     <label for="horizontal-list-radio-millitary"
                                         class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Moderator</label>
                                 </div>
                             </li>
-                            <li class="w-full dark:border-gray-600">
+                            <li class="w-full dark:border-gray-500">
                                 <div class="flex items-center pl-3">
                                     <input id="horizontal-list-radio-passport" type="radio" value="4" v-model="account_type"
                                         name="list-radio"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-700 dark:bg-gray-600">
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-0 dark:ring-offset-gray-600 dark:bg-gray-600">
                                     <label for="horizontal-list-radio-passport"
                                         class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Viewer</label>
                                 </div>
@@ -138,87 +138,105 @@
                             <div class="w-1/3">
                                 <button
                                     class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(1)"
-                                    :class="button_selected[1] ? 'bg-blue-700 text-white' : ''">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[1]"
-                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                    Frontend Developer</button>
+                                    @click="btnSelect(1)" :class="button_selected[1] ? 'bg-blue-700 text-white' : ''">
+                                    <Transition name="slide-fade">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            v-show="button_selected[1]"
+                                            class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </svg>
+                                    </Transition>
+                                    Frontend Developer
+                                </button>
                             </div>
                             <div class="w-1/3">
                                 <button
                                     class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(2)"
-                                    :class="button_selected[2] ? 'bg-blue-700 text-white' : ''">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[2]"
-                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                    UI/UX Designer</button>
+                                    @click="btnSelect(2)" :class="button_selected[2] ? 'bg-blue-700 text-white' : ''">
+                                    <Transition name="slide-fade">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            v-show="button_selected[2]"
+                                            class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </svg>
+                                    </Transition>
+                                    UI/UX Designer
+                                </button>
                             </div>
                             <div class="w-1/3">
                                 <button
                                     class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(3)"
-                                    :class="button_selected[3] ? 'bg-blue-700 text-white' : ''">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[3]"
-                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                    React Developer</button>
+                                    @click="btnSelect(3)" :class="button_selected[3] ? 'bg-blue-700 text-white' : ''">
+                                    <Transition name="slide-fade">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            v-show="button_selected[3]"
+                                            class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </svg>
+                                    </Transition>
+                                    React Developer
+                                </button>
                             </div>
                         </div>
                         <div class="flex w-full text-blue-500 gap-3">
                             <div class="w-1/3">
                                 <button
                                     class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(4)" 
-                                    :class="button_selected[4] ? 'bg-blue-700 text-white' : ''">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[4]"
-                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                    PHP Developer</button>
+                                    @click="btnSelect(4)" :class="button_selected[4] ? 'bg-blue-700 text-white' : ''">
+                                    <Transition name="slide-fade">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            v-show="button_selected[4]"
+                                            class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </svg>
+                                    </Transition>
+                                    PHP Developer
+                                </button>
                             </div>
                             <div class="w-1/3">
                                 <button
                                     class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(5)"
-                                    :class="button_selected[5] ? 'bg-blue-700 text-white' : ''">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[5]"
-                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                    Engineer</button>
+                                    @click="btnSelect(5)" :class="button_selected[5] ? 'bg-blue-700 text-white' : ''">
+                                    <Transition name="slide-fade">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            v-show="button_selected[5]"
+                                            class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </svg>
+                                    </Transition>
+                                    Engineer
+                                </button>
                             </div>
                             <div class="w-1/3">
                                 <button
                                     class="relative border-2 border-blue-600 hover:bg-blue-600 hover:text-white flex justify-center items-center ring-0 w-full rounded-lg h-10 px-2"
-                                    @click="btnSelect(6)"
-                                    :class="button_selected[6] ? 'bg-blue-700 text-white' : ''">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" v-show="button_selected[6]"
-                                        class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    </svg>
-                                    Marketing</button>
+                                    @click="btnSelect(6)" :class="button_selected[6] ? 'bg-blue-700 text-white' : ''">
+                                    <Transition name="slide-fade">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            v-show="button_selected[6]"
+                                            class="bi bi-check-circle-fill w-5 h-5 absolute left-2" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                        </svg>
+                                    </Transition>
+                                    Marketing
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col w-full h-full gap-2 drop-shadow-lg">
                         <span class="font-medium text-gray-900 dark:text-white">Properties</span>
-                        <TransitionGroup name="list">
+                        <TransitionGroup name="fade" tag="ul">
                             <div v-for="(item, index) in property"
                                 class="flex justify-center items-center w-full h-16 dark:text-slate-200 text-slate-800 gap-3 mb-2 p-4 dark:bg-gray-700 bg-gray-200 rounded-lg">
                                 <div class="w-1/3">
                                     <select
-                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
+                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-500 dark:bg-gray-600">
                                         <option value="" disabled>Country</option>
                                         <option value="1">United States</option>
                                         <option value="2">Canada</option>
@@ -228,7 +246,7 @@
                                 </div>
                                 <div class="w-1/3">
                                     <select
-                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
+                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-500 dark:bg-gray-600">
                                         <option value="" disabled>State</option>
                                         <option value="1">Californa</option>
                                         <option value="2">Oregon</option>
@@ -238,7 +256,7 @@
                                 </div>
                                 <div class="w-1/3">
                                     <select
-                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 dark:bg-gray-600">
+                                        class="w-full h-10 flex justify-center items-center border border-gray-500 bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-500 dark:bg-gray-600">
                                         <option value="" disabled>City</option>
                                         <option value="1">Sacramento</option>
                                         <option value="2">Los Angeles</option>
@@ -271,7 +289,7 @@
                         <button class="w-40 h-10 text-white bg-blue-600 hover:bg-blue-700 border-0 ring-0 rounded-lg">Show
                             32 Results</button>
                         <button @click="resetFn"
-                            class="w-20 h-10 dark:text-slate-400 text-black bg-slate-100 hover:bg-gray-200 hover:text-blue-500 dark:bg-slate-800 dark:hover:bg-slate-700 dark:hover:text-slate-200 border border-slate-400 dark:border-gray-500 ring-0 rounded-lg">Reset</button>
+                            class="w-20 h-10 dark:text-slate-400 text-black bg-slate-100 hover:bg-gray-200 hover:text-blue-500 dark:bg-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 border border-slate-400 dark:border-gray-500 ring-0 rounded-lg">Reset</button>
                     </div>
                 </div>
             </div>
@@ -331,7 +349,23 @@ export default {
 </script>
 
 <style>
+.list-move, /* apply transition to moving elements */
 .list-enter-active,
+.list-leave-active {
+  transition: all 0.3s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+/* .list-enter-active,
 .list-leave-active {
     transition: all 0.5s ease;
 }
@@ -340,5 +374,32 @@ export default {
 .list-leave-to {
     opacity: 0;
     transform: translateX(30px);
+} */
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 2. declare enter from and leave to state */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translate(30px, 0);
 }
 </style>

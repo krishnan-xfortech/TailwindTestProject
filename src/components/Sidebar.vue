@@ -30,7 +30,7 @@
                 <img src="https://img.icons8.com/ios-glyphs/30/40C057/search--v1.png" class="w-6 h-6" />
                 <span class="pl-4 drop-shadow-md">Search</span>
                 <div
-                    class="flex justify-center items-center drop-shadow-md 2xl:w-10 2xl:h-6 xl:w-9 xl:h-5 lg:w-8 lg:h-4 rounded-lg dark:bg-slate-800 bg-slate-400 2xl:text-sm xl:text-sm lg:text-xs gap-1 dark:text-slate-400 text-slate-800 p-1 2xl:ml-28 xl:ml-20 lg:ml-16">
+                    class="flex justify-center items-center drop-shadow-md 2xl:w-10 2xl:h-6 xl:w-9 xl:h-5 lg:w-8 lg:h-4 rounded-lg dark:bg-slate-800 bg-slate-400 2xl:text-sm xl:text-sm lg:text-xs gap-1 text-white p-1 2xl:ml-28 xl:ml-20 lg:ml-16">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-command w-3 h-3 "
                         viewBox="0 0 16 16">
                         <path
@@ -78,7 +78,7 @@
                         <span class="pl-4 dark:text-white text-black drop-shadow-md">Welcome</span>
                     </div>
                     <div
-                        class="flex justify-center items-center w-7 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-400 bg-slate-400 text-slate-800 p-1">
+                        class="flex justify-center items-center w-7 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-300 bg-slate-400 text-white p-1">
                         48
                     </div>
                 </button>
@@ -89,7 +89,7 @@
                         <span class="pl-4 dark:text-white text-black drop-shadow-md">UI8 Production</span>
                     </div>
                     <div
-                        class="flex justify-center items-center w-7 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-400 bg-slate-400 text-slate-800 p-1">
+                        class="flex justify-center items-center w-7 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-300 bg-slate-400 text-white p-1">
                         16
                     </div>
                 </button>
@@ -100,7 +100,7 @@
                         <span class="pl-4 dark:text-white text-black drop-shadow-md">Favorites</span>
                     </div>
                     <div
-                        class="flex justify-center items-center w-7 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-400 bg-slate-400 text-slate-800 p-1">
+                        class="flex justify-center items-center w-7 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-300 bg-slate-400 text-white p-1">
                         8
                     </div>
                 </button>
@@ -111,7 +111,7 @@
                         <span class="pl-4 dark:text-white text-black drop-shadow-md">Archived</span>
                     </div>
                     <div
-                        class="flex justify-center items-center w-8 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-400 bg-slate-400 text-slate-800 p-1">
+                        class="flex justify-center items-center w-8 h-6 drop-shadow-md rounded-lg dark:bg-slate-600 dark:text-slate-300 bg-slate-400 text-white p-1">
                         128
                     </div>
                 </button>

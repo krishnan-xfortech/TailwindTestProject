@@ -1,10 +1,10 @@
 <template>
     <div id="resetModal" tabindex="-1" aria-hidden="true" data-modal-backdrop="static"
-        class="modal hidden fixed top-0 right-0 left-0 z-50 backdrop-blur-md bg-black/20 justify-center items-center w-full md:inset-0 h-modal md:h-full">
+        class="modal hidden fixed top-0 right-0 left-0 z-50 backdrop-blur-md bg-black/30 justify-center items-center w-full md:inset-0 h-modal md:h-full">
         <div class="relative p-4 w-lg max-w-lg h-full md:h-auto">
-            <div class="relative p-4 text-center backdrop-blur-md bg-white/30 rounded-lg shadow sm:p-5">
+            <div class="relative p-4 text-center backdrop-blur-md bg-white/30 rounded-lg sm:p-5">
                 <button type="button" @click="hideModal"
-                    class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="absolute top-2.5 right-2.5 border-0 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                     data-modal-toggle="deleteModal">
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
