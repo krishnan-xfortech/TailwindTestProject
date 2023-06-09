@@ -362,8 +362,8 @@
                                         class="block px-4 py-2 rounded-3xl font-semibold drop-shadow-lg dark:hover:bg-blue-200/30 hover:bg-blue-200">Settings</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 rounded-3xl font-semibold drop-shadow-lg dark:hover:bg-blue-200/30 hover:bg-blue-200">Earnings</a>
+                                    <router-link to="/blog-page"
+                                        class="block px-4 py-2 rounded-3xl font-semibold drop-shadow-lg dark:hover:bg-blue-200/30 hover:bg-blue-200">Blogs</router-link>
                                 </li>
                             </ul>
                             <div class="py-1">
